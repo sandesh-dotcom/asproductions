@@ -15,136 +15,143 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-<!-- NAV -->
-<header class="nav" id="nav">
-  <div class="nav-inner">
-    <a href="#top" class="nav-logo">AS <span>PRODUCTION</span></a>
-    <nav class="nav-links">
-      <a href="#work">Work</a>
-      <a href="#services">Services</a>
-      <a href="#approach">Approach</a>
-      <a href="#about">About</a>
-      <a href="#contact" class="nav-cta">Start a Conversation</a>
-    </nav>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
-      <span></span><span></span><span></span>
+<!-- LIVE / NOW-PLAYING READOUT -->
+<div class="now-playing" id="nowPlaying"><span class="dot"></span><span id="nowPlayingText">HOME</span></div>
+
+<!-- TOP BAR -->
+<header class="bar" id="bar">
+  <div class="bar-inner container">
+    <a href="#top" class="wordmark">AS PRODUCTION</a>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">
+      <span class="menu-label">MENU</span>
+      <span class="menu-icon"><i></i><i></i></span>
     </button>
-  </div>
-  <div class="nav-mobile" id="navMobile">
-    <a href="#work">Work</a>
-    <a href="#services">Services</a>
-    <a href="#approach">Approach</a>
-    <a href="#about">About</a>
-    <a href="#contact">Start a Conversation</a>
   </div>
 </header>
 
-<!-- HERO -->
-<section class="hero" id="top">
-  <div class="hero-bg">
-    <div class="hero-grid"></div>
-    <div class="hero-glow"></div>
+<!-- FULLSCREEN OVERLAY NAV -->
+<div class="overlay-nav" id="overlayNav">
+  <nav>
+    <a href="#work" data-num="01"><span class="onum">01</span>Work</a>
+    <a href="#services" data-num="02"><span class="onum">02</span>Services</a>
+    <a href="#approach" data-num="03"><span class="onum">03</span>Approach</a>
+    <a href="#about" data-num="04"><span class="onum">04</span>About</a>
+    <a href="#contact" data-num="05"><span class="onum">05</span>Contact</a>
+  </nav>
+  <div class="overlay-foot">
+    <span>hello@asproductions.in</span>
+    <span>Pan India</span>
   </div>
-  <div class="hero-content reveal">
-    <p class="eyebrow">EVENT PRODUCTION &nbsp;•&nbsp; EVENT MANAGEMENT &nbsp;•&nbsp; ON-GROUND EXECUTION</p>
-    <h1 class="hero-title">
-      <span class="line">Ideas Into</span>
-      <span class="line">Experiences<span class="accent-dot">.</span></span>
-    </h1>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="top" data-label="Home">
+  <p class="hero-eyebrow reveal">EVENT PRODUCTION — EVENT MANAGEMENT — ON-GROUND EXECUTION</p>
+  <h1 class="hero-head reveal">
+    <span class="sans">Ideas Into</span>
+    <span class="serif-italic">Experiences</span>
+  </h1>
+  <div class="hero-row reveal">
     <p class="hero-sub">End-to-end event production and execution for technology companies, communities and brands across India — from the first planning call to the final teardown.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn btn-primary">Plan Your Event <span class="arrow">→</span></a>
-      <a href="#work" class="btn btn-ghost">View Our Work</a>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <span>SCROLL</span>
-    <div class="scroll-line"></div>
-  </div>
-</section>
-
-<!-- TRUST / INTRO -->
-<section class="section" id="about">
-  <div class="container">
-    <p class="kicker reveal">BUILT FOR EXPERIENCES</p>
-    <h2 class="h2 reveal">More Than Event Management.<br>We're Your Production Partner.</h2>
-    <div class="intro-grid">
-      <div class="intro-copy reveal">
-        <p>Great events don't happen by accident.</p>
-        <p>They require hundreds of moving parts to come together at exactly the right time. From venue setup and stage production to branding, technology, logistics and on-ground coordination, AS Production takes care of the details behind the experience.</p>
-        <p>We work with brands, technology companies, communities and organizations to deliver events across India — from the first planning call to the final teardown.</p>
-      </div>
-      <div class="stats-grid reveal">
-        <div class="stat">
-          <div class="stat-num" data-count="80" data-suffix="+">0</div>
-          <div class="stat-label">Events &amp; Experiences</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num-text">Pan India</div>
-          <div class="stat-label">Event Execution</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num-text">End-to-End</div>
-          <div class="stat-label">Production &amp; Management</div>
-        </div>
-        <div class="stat">
-          <div class="stat-num-text">One Team</div>
-          <div class="stat-label">From Concept to Completion</div>
-        </div>
-      </div>
+      <a href="#contact" class="btn-line">Plan Your Event <span class="arrow">→</span></a>
+      <a href="#work" class="btn-line ghost">View Our Work</a>
     </div>
   </div>
 </section>
 
-<!-- SERVICES -->
-<section class="section section-alt" id="services">
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>CONFERENCES</span><span class="dot-sep">·</span><span>HACKATHONS</span><span class="dot-sep">·</span><span>STAGE &amp; AV</span><span class="dot-sep">·</span><span>BRANDING</span><span class="dot-sep">·</span><span>LOGISTICS</span><span class="dot-sep">·</span><span>CORPORATE EVENTS</span><span class="dot-sep">·</span>
+    <span>CONFERENCES</span><span class="dot-sep">·</span><span>HACKATHONS</span><span class="dot-sep">·</span><span>STAGE &amp; AV</span><span class="dot-sep">·</span><span>BRANDING</span><span class="dot-sep">·</span><span>LOGISTICS</span><span class="dot-sep">·</span><span>CORPORATE EVENTS</span><span class="dot-sep">·</span>
+  </div>
+</div>
+
+<!-- INTRO / TRUST -->
+<section class="section" id="about" data-label="About">
+  <div class="container intro-grid">
+    <div class="intro-left reveal">
+      <span class="cue">CUE 01</span>
+      <h2 class="h2-serif">More than event management. We're your production partner.</h2>
+    </div>
+    <div class="intro-right reveal">
+      <p class="lead">Great events don't happen by accident.</p>
+      <p>They require hundreds of moving parts to come together at exactly the right time. From venue setup and stage production to branding, technology, logistics and on-ground coordination, AS Production takes care of the details behind the experience.</p>
+      <p>We work with brands, technology companies, communities and organizations to deliver events across India — from the first planning call to the final teardown.</p>
+    </div>
+  </div>
+  <div class="stat-row container reveal">
+    <div class="stat-item">
+      <span class="stat-num" data-count="80" data-suffix="+">0</span>
+      <span class="stat-label">Events &amp; Experiences</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num-text">Pan India</span>
+      <span class="stat-label">Event Execution</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num-text">End-to-End</span>
+      <span class="stat-label">Production &amp; Management</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-num-text">One Team</span>
+      <span class="stat-label">From Concept to Completion</span>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES — RUNDOWN -->
+<section class="section section-alt" id="services" data-label="Services">
   <div class="container">
-    <p class="kicker reveal">WHAT WE DO</p>
-    <h2 class="h2 reveal">Everything Your Event Needs.<br>Under One Roof.</h2>
-    <div class="services-grid">
-      <div class="service-card reveal">
-        <span class="service-num">01</span>
+    <div class="section-head reveal">
+      <span class="cue">CUE 02</span>
+      <h2 class="h2-serif">Everything your event needs. Under one roof.</h2>
+    </div>
+    <div class="rundown reveal">
+      <div class="rundown-row">
+        <span class="rn">01</span>
         <h3>Event Production</h3>
         <p>We transform event concepts into fully produced experiences — handling everything from stage design to technical execution.</p>
       </div>
-      <div class="service-card reveal">
-        <span class="service-num">02</span>
+      <div class="rundown-row">
+        <span class="rn">02</span>
         <h3>Conference Management</h3>
         <p>Professional planning and execution for conferences, summits, seminars and industry gatherings.</p>
       </div>
-      <div class="service-card reveal">
-        <span class="service-num">03</span>
+      <div class="rundown-row">
+        <span class="rn">03</span>
         <h3>Hackathons &amp; Tech Events</h3>
         <p>Purpose-built environments for developers, builders and technology communities — from venue setup to participant experience.</p>
       </div>
-      <div class="service-card reveal">
-        <span class="service-num">04</span>
+      <div class="rundown-row">
+        <span class="rn">04</span>
         <h3>Stage &amp; AV Production</h3>
         <p>LED screens, sound, lighting, stage design, presentation systems and technical production.</p>
       </div>
-      <div class="service-card reveal">
-        <span class="service-num">05</span>
+      <div class="rundown-row">
+        <span class="rn">05</span>
         <h3>Branding &amp; Event Fabrication</h3>
-        <p>Turn your brand into an environment with custom backdrops, standees, signage, booths, stage branding and venue branding.</p>
+        <p>Custom backdrops, standees, signage, booths, stage branding and venue branding.</p>
       </div>
-      <div class="service-card reveal">
-        <span class="service-num">06</span>
+      <div class="rundown-row">
+        <span class="rn">06</span>
         <h3>Logistics &amp; Operations</h3>
         <p>Registration, guest management, vendor coordination, transportation, crew management and on-ground operations.</p>
       </div>
-      <div class="service-card reveal">
-        <span class="service-num">07</span>
+      <div class="rundown-row">
+        <span class="rn">07</span>
         <h3>Event Staffing</h3>
-        <p>Experienced event teams, coordinators, volunteers, registration staff, backstage teams and production crew.</p>
+        <p>Experienced coordinators, volunteers, registration staff, backstage teams and production crew.</p>
       </div>
-      <div class="service-card reveal">
-        <span class="service-num">08</span>
+      <div class="rundown-row">
+        <span class="rn">08</span>
         <h3>Corporate &amp; Community Events</h3>
         <p>From intimate gatherings to large-scale community experiences, we manage the details that keep your event moving.</p>
       </div>
@@ -152,188 +159,182 @@
   </div>
 </section>
 
-<!-- APPROACH -->
-<section class="section" id="approach">
+<!-- APPROACH — TIMELINE -->
+<section class="section" id="approach" data-label="Approach">
   <div class="container">
-    <p class="kicker reveal">HOW WE WORK</p>
-    <h2 class="h2 reveal">One Team. Every Detail.</h2>
-    <div class="approach-list">
-      <div class="approach-item reveal">
-        <span class="approach-num">01</span>
-        <div>
-          <h3>Understand</h3>
-          <p>We start with your objectives, audience, budget and vision.</p>
-        </div>
+    <div class="section-head reveal">
+      <span class="cue">CUE 03</span>
+      <h2 class="h2-serif">One team. Every detail.</h2>
+    </div>
+    <div class="timeline reveal">
+      <div class="tl-item">
+        <span class="tl-num">01</span>
+        <h3>Understand</h3>
+        <p>We start with your objectives, audience, budget and vision.</p>
       </div>
-      <div class="approach-item reveal">
-        <span class="approach-num">02</span>
-        <div>
-          <h3>Plan</h3>
-          <p>We build the event blueprint — timelines, vendors, production requirements, logistics and resources.</p>
-        </div>
+      <div class="tl-item">
+        <span class="tl-num">02</span>
+        <h3>Plan</h3>
+        <p>We build the event blueprint — timelines, vendors, production requirements, logistics and resources.</p>
       </div>
-      <div class="approach-item reveal">
-        <span class="approach-num">03</span>
-        <div>
-          <h3>Produce</h3>
-          <p>Our production team brings the plan to life, coordinating every element before the doors open.</p>
-        </div>
+      <div class="tl-item">
+        <span class="tl-num">03</span>
+        <h3>Produce</h3>
+        <p>Our production team brings the plan to life, coordinating every element before the doors open.</p>
       </div>
-      <div class="approach-item reveal">
-        <span class="approach-num">04</span>
-        <div>
-          <h3>Execute</h3>
-          <p>On event day, our team manages the moving parts so you can focus on your guests, speakers and brand.</p>
-        </div>
+      <div class="tl-item">
+        <span class="tl-num">04</span>
+        <h3>Execute</h3>
+        <p>On event day, our team manages the moving parts so you can focus on your guests, speakers and brand.</p>
       </div>
-      <div class="approach-item reveal">
-        <span class="approach-num">05</span>
-        <div>
-          <h3>Deliver</h3>
-          <p>From final checks to teardown, we stay accountable until the job is done.</p>
-        </div>
+      <div class="tl-item">
+        <span class="tl-num">05</span>
+        <h3>Deliver</h3>
+        <p>From final checks to teardown, we stay accountable until the job is done.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- FEATURED WORK -->
-<section class="section section-alt" id="work">
-  <div class="container">
-    <p class="kicker reveal">SELECTED EXPERIENCES</p>
-    <h2 class="h2 reveal">We've Been Behind the Scenes.</h2>
-    <div class="work-grid">
-      <div class="work-card reveal work-1">
-        <div class="work-visual"></div>
-        <div class="work-info">
-          <span class="work-tag">Technology • 500+ Attendees</span>
-          <h3>Tech Conference</h3>
-          <p>End-to-end production, stage setup, branding, AV and on-ground execution.</p>
-        </div>
-      </div>
-      <div class="work-card reveal work-2">
-        <div class="work-visual"></div>
-        <div class="work-info">
-          <span class="work-tag">Technology • Developer Community</span>
-          <h3>Hackathon</h3>
-          <p>Venue transformation, participant registration, branding, technical infrastructure and 36-hour on-ground operations.</p>
-        </div>
-      </div>
-      <div class="work-card reveal work-3">
-        <div class="work-visual"></div>
-        <div class="work-info">
-          <span class="work-tag">Web3 • Community</span>
-          <h3>Community Event</h3>
-          <p>Event production, stage management, branding, speaker coordination and audience experience.</p>
-        </div>
-      </div>
-      <div class="work-card reveal work-4">
-        <div class="work-visual"></div>
-        <div class="work-info">
-          <span class="work-tag">Enterprise • B2B</span>
-          <h3>Corporate Conference</h3>
-          <p>Professional conference production with complete branding, AV, guest management and venue operations.</p>
-        </div>
-      </div>
-    </div>
-    <div class="center-cta reveal">
-      <a href="#contact" class="btn btn-ghost">See More Projects <span class="arrow">→</span></a>
+<!-- FEATURED WORK — FULL-BLEED STACK -->
+<section class="work-stack" id="work" data-label="Work">
+  <div class="section-head container reveal">
+    <span class="cue">CUE 04</span>
+    <h2 class="h2-serif">We've been behind the scenes.</h2>
+  </div>
+
+  <div class="work-panel reveal">
+    <div class="wp-visual wp-v1"></div>
+    <div class="wp-info container">
+      <span class="wp-index">01 / 04</span>
+      <h3>Tech Conference</h3>
+      <span class="wp-tag">Technology · 500+ Attendees</span>
+      <p>End-to-end production, stage setup, branding, AV and on-ground execution.</p>
     </div>
   </div>
+
+  <div class="work-panel reveal reverse">
+    <div class="wp-visual wp-v2"></div>
+    <div class="wp-info container">
+      <span class="wp-index">02 / 04</span>
+      <h3>Hackathon</h3>
+      <span class="wp-tag">Technology · Developer Community</span>
+      <p>Venue transformation, participant registration, branding, technical infrastructure and 36-hour on-ground operations.</p>
+    </div>
+  </div>
+
+  <div class="work-panel reveal">
+    <div class="wp-visual wp-v3"></div>
+    <div class="wp-info container">
+      <span class="wp-index">03 / 04</span>
+      <h3>Community Event</h3>
+      <span class="wp-tag">Web3 · Community</span>
+      <p>Event production, stage management, branding, speaker coordination and audience experience.</p>
+    </div>
+  </div>
+
+  <div class="work-panel reveal reverse">
+    <div class="wp-visual wp-v4"></div>
+    <div class="wp-info container">
+      <span class="wp-index">04 / 04</span>
+      <h3>Corporate Conference</h3>
+      <span class="wp-tag">Enterprise · B2B</span>
+      <p>Professional conference production with complete branding, AV, guest management and venue operations.</p>
+    </div>
+  </div>
+
+  <div class="center-cta reveal"><a href="#contact" class="btn-line">See More Projects <span class="arrow">→</span></a></div>
 </section>
 
 <!-- WHY US -->
-<section class="section" id="why">
+<section class="section section-alt" id="why" data-label="Why Us">
   <div class="container">
-    <p class="kicker reveal">WHY US</p>
-    <h2 class="h2 reveal">Because Execution Is Everything.</h2>
-    <div class="why-grid">
-      <div class="why-card reveal">
-        <h3>Built for Fast-Moving Events</h3>
-        <p>We understand the pace and unpredictability of technology, startup and community events.</p>
+    <div class="section-head reveal">
+      <span class="cue">CUE 05</span>
+      <h2 class="h2-serif">Because execution is everything.</h2>
+    </div>
+    <div class="why-list reveal">
+      <div class="why-item">
+        <span class="why-num">01</span>
+        <div><h3>Built for Fast-Moving Events</h3><p>We understand the pace and unpredictability of technology, startup and community events.</p></div>
       </div>
-      <div class="why-card reveal">
-        <h3>Production Meets Technology</h3>
-        <p>Our experience with tech ecosystems allows us to understand the unique requirements of hackathons, developer conferences and Web3 events.</p>
+      <div class="why-item">
+        <span class="why-num">02</span>
+        <div><h3>Production Meets Technology</h3><p>Our experience with tech ecosystems lets us understand the unique needs of hackathons, developer conferences and Web3 events.</p></div>
       </div>
-      <div class="why-card reveal">
-        <h3>One Point of Contact</h3>
-        <p>Instead of managing multiple vendors, you get one team coordinating the entire production.</p>
+      <div class="why-item">
+        <span class="why-num">03</span>
+        <div><h3>One Point of Contact</h3><p>Instead of managing multiple vendors, you get one team coordinating the entire production.</p></div>
       </div>
-      <div class="why-card reveal">
-        <h3>Detail-Driven Execution</h3>
-        <p>Timelines, checklists, vendors, equipment, speakers, branding and logistics — we obsess over the details.</p>
+      <div class="why-item">
+        <span class="why-num">04</span>
+        <div><h3>Detail-Driven Execution</h3><p>Timelines, checklists, vendors, equipment, speakers, branding and logistics — we obsess over the details.</p></div>
       </div>
-      <div class="why-card reveal">
-        <h3>Pan-India Capability</h3>
-        <p>Our network and operational experience allow us to execute events across cities and venues throughout India.</p>
+      <div class="why-item">
+        <span class="why-num">05</span>
+        <div><h3>Pan-India Capability</h3><p>Our network and operational experience let us execute events across cities and venues throughout India.</p></div>
       </div>
-      <div class="why-card reveal">
-        <h3>Built to Scale</h3>
-        <p>Whether you're hosting 50 people or 5,000, we build the production around the experience you want to create.</p>
+      <div class="why-item">
+        <span class="why-num">06</span>
+        <div><h3>Built to Scale</h3><p>Whether you're hosting 50 people or 5,000, we build the production around the experience you want to create.</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- EVENT TYPES -->
-<section class="section section-alt" id="events">
-  <div class="container-fluid">
-    <div class="container">
-      <p class="kicker reveal">EVENTS WE PRODUCE</p>
-      <h2 class="h2 reveal">From 50 People to Thousands.</h2>
-    </div>
-    <div class="event-scroll reveal">
-      <div class="event-track">
-        <div class="event-chip"><h4>Tech Conferences</h4><p>Where ideas meet people.</p></div>
-        <div class="event-chip"><h4>Hackathons</h4><p>Built for builders.</p></div>
-        <div class="event-chip"><h4>Corporate Events</h4><p>Professional experiences for modern businesses.</p></div>
-        <div class="event-chip"><h4>Community Events</h4><p>Bring your community together.</p></div>
-        <div class="event-chip"><h4>Product Launches</h4><p>Make your launch impossible to ignore.</p></div>
-        <div class="event-chip"><h4>Summits &amp; Conclaves</h4><p>Big conversations deserve big production.</p></div>
-        <div class="event-chip"><h4>Workshops &amp; Meetups</h4><p>Small format. Big impact.</p></div>
-      </div>
+<!-- EVENT TYPES — REEL -->
+<section class="section" id="events" data-label="Event Types">
+  <div class="section-head container reveal">
+    <span class="cue">CUE 06</span>
+    <h2 class="h2-serif">From 50 people to thousands.</h2>
+  </div>
+  <div class="reel reveal">
+    <div class="reel-track">
+      <div class="reel-item"><span class="reel-num">01</span><h4>Tech Conferences</h4><p>Where ideas meet people.</p></div>
+      <div class="reel-item"><span class="reel-num">02</span><h4>Hackathons</h4><p>Built for builders.</p></div>
+      <div class="reel-item"><span class="reel-num">03</span><h4>Corporate Events</h4><p>Professional experiences for modern businesses.</p></div>
+      <div class="reel-item"><span class="reel-num">04</span><h4>Community Events</h4><p>Bring your community together.</p></div>
+      <div class="reel-item"><span class="reel-num">05</span><h4>Product Launches</h4><p>Make your launch impossible to ignore.</p></div>
+      <div class="reel-item"><span class="reel-num">06</span><h4>Summits &amp; Conclaves</h4><p>Big conversations deserve big production.</p></div>
+      <div class="reel-item"><span class="reel-num">07</span><h4>Workshops &amp; Meetups</h4><p>Small format. Big impact.</p></div>
     </div>
   </div>
 </section>
 
-<!-- FULL WIDTH STATEMENT -->
+<!-- STATEMENT -->
 <section class="statement">
   <div class="statement-inner reveal">
-    <h2>Your Event Has<br>One Chance.</h2>
-    <h2 class="accent">We Make It Count.</h2>
+    <h2 class="statement-head">Your event has one chance.<br><span class="serif-italic">We make it count.</span></h2>
     <p>From planning to production to execution, AS Production makes sure every detail works when it matters most.</p>
-    <a href="#contact" class="btn btn-dark">Let's Build Your Event <span class="arrow">→</span></a>
+    <a href="#contact" class="btn-line dark">Let's Build Your Event <span class="arrow">→</span></a>
   </div>
 </section>
 
 <!-- CLIENTS -->
-<section class="section" id="clients">
-  <div class="container">
-    <p class="kicker reveal center">TRUSTED BY COMMUNITIES, COMPANIES &amp; BRANDS</p>
-    <div class="logo-grid reveal">
-      <div class="logo-slot">YOUR LOGO</div>
-      <div class="logo-slot">YOUR LOGO</div>
-      <div class="logo-slot">YOUR LOGO</div>
-      <div class="logo-slot">YOUR LOGO</div>
-      <div class="logo-slot">YOUR LOGO</div>
-      <div class="logo-slot">YOUR LOGO</div>
+<section class="section" id="clients" data-label="Clients">
+  <p class="kicker-mono center container reveal">TRUSTED BY COMMUNITIES, COMPANIES &amp; BRANDS</p>
+  <div class="marquee marquee-slow reveal">
+    <div class="marquee-track">
+      <span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span>
+      <span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span><span>YOUR LOGO</span><span class="dot-sep">·</span>
     </div>
-    <p class="logo-note reveal">Partner logos to be added once confirmed.</p>
   </div>
+  <p class="logo-note container reveal">Partner logos to be added once confirmed.</p>
 </section>
 
 <!-- TESTIMONIALS -->
-<section class="section section-alt" id="testimonials">
+<section class="section section-alt" id="testimonials" data-label="Testimonials">
   <div class="container">
-    <p class="kicker reveal">WHAT PEOPLE SAY</p>
-    <div class="testimonial-grid">
-      <div class="testimonial-card reveal">
-        <p class="quote">“Placeholder — replace with a real client testimonial once available.”</p>
+    <span class="cue reveal">CUE 07</span>
+    <div class="quote-stack">
+      <div class="quote-block reveal">
+        <span class="big-quote">“</span>
+        <p>Placeholder — replace with a real client testimonial once available.</p>
         <span class="quote-attr">— Client / Organization</span>
       </div>
-      <div class="testimonial-card reveal">
-        <p class="quote">“Placeholder — replace with a real client testimonial once available.”</p>
+      <div class="quote-block reveal">
+        <span class="big-quote">“</span>
+        <p>Placeholder — replace with a real client testimonial once available.</p>
         <span class="quote-attr">— Event Partner</span>
       </div>
     </div>
@@ -341,57 +342,40 @@
 </section>
 
 <!-- CTA -->
-<section class="section cta-section" id="contact">
-  <div class="container">
-    <div class="cta-box reveal">
-      <h2 class="h2">Got an Event in Mind?<br>Let's Build It.</h2>
-      <p class="cta-sub">Tell us what you're planning. We'll help you turn the idea into an experience.</p>
-      <a href="mailto:hello@asproductions.in" class="btn btn-primary">Start a Conversation <span class="arrow">→</span></a>
-      <div class="cta-meta">
-        <div><span>Email</span>hello@asproductions.in</div>
-        <div><span>Based in</span>India</div>
-        <div><span>Serving</span>Pan India</div>
-      </div>
+<section class="section" id="contact" data-label="Contact">
+  <div class="container cta-final reveal">
+    <span class="cue">CUE 08</span>
+    <h2 class="h2-serif big">Got an event in mind?<br><span class="serif-italic">Let's build it.</span></h2>
+    <p class="cta-sub">Tell us what you're planning. We'll help you turn the idea into an experience.</p>
+    <a href="mailto:hello@asproductions.in" class="btn-line">Start a Conversation <span class="arrow">→</span></a>
+    <div class="credits">
+      <div><span>Email</span>hello@asproductions.in</div>
+      <div><span>Based in</span>India</div>
+      <div><span>Serving</span>Pan India</div>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer class="footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a href="#top" class="nav-logo">AS <span>PRODUCTION</span></a>
-      <p>Event Production &amp; Management</p>
-    </div>
-    <div class="footer-col">
-      <h4>Navigation</h4>
+  <div class="container footer-row">
+    <span class="wordmark">AS PRODUCTION</span>
+    <nav class="footer-links">
       <a href="#top">Home</a>
       <a href="#services">Services</a>
-      <a href="#work">Our Work</a>
+      <a href="#work">Work</a>
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
-    </div>
-    <div class="footer-col">
-      <h4>Services</h4>
-      <a href="#services">Event Production</a>
-      <a href="#services">Conferences</a>
-      <a href="#services">Hackathons</a>
-      <a href="#services">Corporate Events</a>
-      <a href="#services">Stage &amp; AV</a>
-      <a href="#services">Branding</a>
-      <a href="#services">Logistics</a>
-    </div>
-    <div class="footer-col">
-      <h4>Social</h4>
+    </nav>
+    <div class="footer-social">
       <a href="#" target="_blank" rel="noopener">LinkedIn</a>
       <a href="#" target="_blank" rel="noopener">Instagram</a>
       <a href="#" target="_blank" rel="noopener">YouTube</a>
     </div>
   </div>
-  <div class="footer-bottom">
-    <div class="container">
-      <p>© 2026 AS Production. All rights reserved.</p>
-    </div>
+  <div class="footer-bottom container">
+    <span>END OF SHOW</span>
+    <span>© 2026 AS Production. All rights reserved.</span>
   </div>
 </footer>
 
