@@ -11,15 +11,18 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://asproductions.in" />
 
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%23c6ff3d%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%230a0a0a%22 text-anchor=%22middle%22>A</text></svg>" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230a0a0a%22/><text x=%2250%22 y=%2266%22 font-size=%2258%22 font-family=%22sans-serif%22 font-weight=%22800%22 fill=%22%23ffd400%22 text-anchor=%22middle%22>A</text></svg>" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+<!-- SCROLL PROGRESS -->
+<div class="progress-bar" id="progressBar"></div>
 
 <!-- LIVE / NOW-PLAYING READOUT -->
 <div class="now-playing" id="nowPlaying"><span class="dot"></span><span id="nowPlayingText">HOME</span></div>
@@ -52,16 +55,33 @@
 
 <!-- HERO -->
 <section class="hero" id="top" data-label="Home">
-  <p class="hero-eyebrow reveal">EVENT PRODUCTION — EVENT MANAGEMENT — ON-GROUND EXECUTION</p>
+
+  <span class="sticker sticker-star" aria-hidden="true">✦</span>
+  <span class="sticker sticker-bolt" aria-hidden="true">⚡</span>
+  <span class="sticker sticker-dot" aria-hidden="true"></span>
+
+  <div class="spin-badge" aria-hidden="true">
+    <svg viewBox="0 0 200 200" class="spin-badge-text">
+      <defs><path id="badgePath" d="M 100,100 m -80,0 a 80,80 0 1,1 160,0 a 80,80 0 1,1 -160,0" /></defs>
+      <text><textPath href="#badgePath">PLAN · PRODUCE · EXECUTE · REPEAT · </textPath></text>
+    </svg>
+    <span class="spin-badge-core">↗</span>
+  </div>
+
+  <div class="chip-row reveal">
+    <span class="chip">EVENT PRODUCTION</span>
+    <span class="chip chip-flip">EVENT MANAGEMENT</span>
+    <span class="chip">ON-GROUND EXECUTION</span>
+  </div>
   <h1 class="hero-head reveal">
     <span class="sans">Ideas Into</span>
-    <span class="serif-italic">Experiences</span>
+    <span class="mark-wrap"><span class="serif-italic">Experiences</span></span>
   </h1>
   <div class="hero-row reveal">
     <p class="hero-sub">End-to-end event production and execution for technology companies, communities and brands across India — from the first planning call to the final teardown.</p>
     <div class="hero-actions">
-      <a href="#contact" class="btn-line">Plan Your Event <span class="arrow">→</span></a>
-      <a href="#work" class="btn-line ghost">View Our Work</a>
+      <a href="#contact" class="btn-line magnetic">Plan Your Event <span class="arrow">→</span></a>
+      <a href="#work" class="btn-line ghost magnetic">View Our Work</a>
     </div>
   </div>
 </section>
@@ -243,7 +263,7 @@
     </div>
   </div>
 
-  <div class="center-cta reveal"><a href="#contact" class="btn-line">See More Projects <span class="arrow">→</span></a></div>
+  <div class="center-cta reveal"><a href="#contact" class="btn-line ghost magnetic">See More Projects <span class="arrow">→</span></a></div>
 </section>
 
 <!-- WHY US -->
@@ -303,10 +323,11 @@
 
 <!-- STATEMENT -->
 <section class="statement">
+  <span class="ring" aria-hidden="true"></span>
   <div class="statement-inner reveal">
-    <h2 class="statement-head">Your event has one chance.<br><span class="serif-italic">We make it count.</span></h2>
+    <h2 class="statement-head">Your event has one chance.<br><span class="serif-italic on-dark">We make it count.</span></h2>
     <p>From planning to production to execution, AS Production makes sure every detail works when it matters most.</p>
-    <a href="#contact" class="btn-line dark">Let's Build Your Event <span class="arrow">→</span></a>
+    <a href="#contact" class="btn-line magnetic">Let's Build Your Event <span class="arrow">→</span></a>
   </div>
 </section>
 
@@ -345,9 +366,9 @@
 <section class="section" id="contact" data-label="Contact">
   <div class="container cta-final reveal">
     <span class="cue">CUE 08</span>
-    <h2 class="h2-serif big">Got an event in mind?<br><span class="serif-italic">Let's build it.</span></h2>
+    <h2 class="h2-serif big">Got an event in mind?<br><span class="mark-wrap"><span class="serif-italic">Let's build it.</span></span></h2>
     <p class="cta-sub">Tell us what you're planning. We'll help you turn the idea into an experience.</p>
-    <a href="mailto:hello@asproductions.in" class="btn-line">Start a Conversation <span class="arrow">→</span></a>
+    <a href="mailto:hello@asproductions.in" class="btn-line magnetic">Start a Conversation <span class="arrow">→</span></a>
     <div class="credits">
       <div><span>Email</span>hello@asproductions.in</div>
       <div><span>Based in</span>India</div>

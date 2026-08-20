@@ -5,14 +5,37 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuBtn = document.getElementById("menuBtn");
   const overlayNav = document.getElementById("overlayNav");
   const nowPlayingText = document.getElementById("nowPlayingText");
+  const progressBar = document.getElementById("progressBar");
 
-  // Top bar: transparent -> glass on scroll
+  // Top bar: transparent -> glass on scroll + scroll progress bar
   const onScroll = () => {
     if (window.scrollY > 40) bar.classList.add("scrolled");
     else bar.classList.remove("scrolled");
+
+    if (progressBar) {
+      const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+      const pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+      progressBar.style.width = pct + "%";
+    }
   };
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
+
+  // Magnetic buttons — pull slightly toward the cursor within their bounds
+  const magnets = document.querySelectorAll(".magnetic");
+  if (window.matchMedia("(pointer: fine)").matches) {
+    magnets.forEach((el) => {
+      el.addEventListener("mousemove", (e) => {
+        const rect = el.getBoundingClientRect();
+        const relX = e.clientX - rect.left - rect.width / 2;
+        const relY = e.clientY - rect.top - rect.height / 2;
+        el.style.transform = `translate(${relX * 0.25}px, ${relY * 0.35}px)`;
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "translate(0, 0)";
+      });
+    });
+  }
 
   // Fullscreen overlay nav toggle
   const closeNav = () => {
