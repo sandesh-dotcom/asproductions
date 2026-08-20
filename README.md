@@ -17,8 +17,11 @@ CNAME                  → custom domain for GitHub Pages (asproductions.in)
 ```
 
 **Images right now are dummy placeholders**, not final assets:
-- Photos (hero, work panels, gallery strip, testimonial avatars) load from [Lorem Picsum](https://picsum.photos) with fixed seeds (`?seed=asprod-...`) — random stock-style photography, just for layout. Requires internet access to load; swap each `src` for a real photo when ready (search `picsum.photos` in `index.html` to find every instance).
+- Photos (hero, work panels, gallery strip) load from **Wikimedia Commons**, picked to roughly match each caption (conference audience, hackathon/coding, exhibition hall, stage lighting, registration desk, etc.) instead of random stock imagery. They're freely licensed (search `commons.wikimedia.org` in `index.html` to find every instance) but still **someone else's real event photography** — replace with AS Production's own photos before public launch, both for brand accuracy and to drop any lingering attribution obligation.
+- Testimonial avatars are generic silhouette icons (`assets/placeholders/avatar-0*.svg`), deliberately *not* photos of real people — swap for real client headshots once you have permission to use them.
 - Client logos in `assets/placeholders/logo-0*.svg` are invented abstract marks (no real brand names/logos) — purely to show the grid's grayscale-to-color hover treatment. Replace the files (or the `src` paths) with real partner logos once confirmed.
+
+All of the above require internet access to load (Commons + Google Fonts) — the page won't render fully offline until real assets replace them.
 
 ## Run locally
 
@@ -48,6 +51,6 @@ Import the repo as a static site (no build command, publish directory = `/`), th
 
 - [ ] Replace placeholder testimonials in `index.html` (`#testimonials`) with real client quotes
 - [ ] Swap dummy client logos in `#clients` for real partner logos once confirmed
-- [ ] Swap dummy Picsum photos (hero, `#work`, `#gallery`, testimonial avatars) for real event photography
+- [ ] Swap dummy Wikimedia Commons photos (hero, `#work`, `#gallery`) for real event photography, and generic avatar icons for real client headshots
 - [ ] Add real social links in the footer (LinkedIn, Instagram, YouTube)
 - [ ] Confirm `hello@asproductions.in` is a live inbox
