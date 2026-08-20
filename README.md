@@ -6,14 +6,19 @@ Live domain: [asproductions.in](https://asproductions.in)
 
 ## Stack
 
-Plain HTML/CSS/JS — no build step, no dependencies. Fonts are loaded from Google Fonts (Space Grotesk + Inter).
+Plain HTML/CSS/JS — no build step, no dependencies. Fonts are loaded from Google Fonts (Fraunces + Space Mono + Inter).
 
 ```
-index.html    → markup / content
-styles.css    → dark, cinematic theme (near-black + electric lime accent)
-script.js     → scroll reveals, count-up stats, glass navbar, mobile nav
-CNAME         → custom domain for GitHub Pages (asproductions.in)
+index.html            → markup / content
+styles.css             → white/yellow/black poster theme, neo-brutalist hard shadows
+script.js              → scroll reveals, magnetic buttons, polaroid tilt, marquees, nav
+assets/placeholders/   → dummy client-logo marks (SVG, self-contained)
+CNAME                  → custom domain for GitHub Pages (asproductions.in)
 ```
+
+**Images right now are dummy placeholders**, not final assets:
+- Photos (hero, work panels, gallery strip, testimonial avatars) load from [Lorem Picsum](https://picsum.photos) with fixed seeds (`?seed=asprod-...`) — random stock-style photography, just for layout. Requires internet access to load; swap each `src` for a real photo when ready (search `picsum.photos` in `index.html` to find every instance).
+- Client logos in `assets/placeholders/logo-0*.svg` are invented abstract marks (no real brand names/logos) — purely to show the grid's grayscale-to-color hover treatment. Replace the files (or the `src` paths) with real partner logos once confirmed.
 
 ## Run locally
 
@@ -42,7 +47,7 @@ Import the repo as a static site (no build command, publish directory = `/`), th
 ## Content to update before launch
 
 - [ ] Replace placeholder testimonials in `index.html` (`#testimonials`) with real client quotes
-- [ ] Add real partner/client logos in `#clients` (currently placeholder slots)
-- [ ] Swap the abstract CSS visuals in `#work` for real event photography/video
+- [ ] Swap dummy client logos in `#clients` for real partner logos once confirmed
+- [ ] Swap dummy Picsum photos (hero, `#work`, `#gallery`, testimonial avatars) for real event photography
 - [ ] Add real social links in the footer (LinkedIn, Instagram, YouTube)
 - [ ] Confirm `hello@asproductions.in` is a live inbox

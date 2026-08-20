@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 150">
-  <rect width="300" height="150" fill="#ffffff"/>
-  <rect x="8" y="8" width="284" height="134" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-dasharray="7 5" rx="10"/>
-  <text x="150" y="80" font-family="monospace" font-size="14" font-weight="700" fill="#0a0a0a" text-anchor="middle">CLIENT LOGO</text>
+  <g fill="#0a0a0a">
+    <polyline points="20,80 40,80 50,55 65,105 78,80 100,80" fill="none" stroke="#0a0a0a" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" />
+  </g>
+  <text x="170" y="83" font-family="'Space Grotesk', Arial, sans-serif" font-size="30" font-weight="700" fill="#0a0a0a">PULSE</text>
 </svg>
