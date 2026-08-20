@@ -149,8 +149,9 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
   background: var(--yellow);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 40px;
+  justify-content: flex-start;
+  padding: 92px 40px 28px;
+  overflow-y: auto;
   opacity: 0;
   visibility: hidden;
   transform: translateY(-12px);
@@ -163,15 +164,29 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
   align-items: baseline;
   gap: 24px;
   font-family: var(--font-serif);
-  font-size: clamp(36px, 8vw, 88px);
+  font-size: clamp(28px, 5.8vw, 64px);
   font-weight: 500;
-  padding: 12px 16px;
+  padding: 7px 16px;
   color: var(--ink);
   border-bottom: 2px solid var(--ink);
-  transition: color 0.25s, background 0.25s, padding-left 0.3s var(--ease);
+  transition: color 0.25s, background 0.25s, padding-left 0.3s var(--ease), opacity 0.4s var(--ease), transform 0.4s var(--ease);
+  opacity: 0;
+  transform: translateX(-16px);
 }
+.overlay-nav.open a { opacity: 1; transform: translateX(0); }
+.overlay-nav a:nth-child(1) { transition-delay: 0.05s; }
+.overlay-nav a:nth-child(2) { transition-delay: 0.1s; }
+.overlay-nav a:nth-child(3) { transition-delay: 0.15s; }
+.overlay-nav a:nth-child(4) { transition-delay: 0.2s; }
+.overlay-nav a:nth-child(5) { transition-delay: 0.25s; }
+.overlay-nav a:nth-child(6) { transition-delay: 0.3s; }
 .overlay-nav a:hover { color: var(--yellow); background: var(--ink); padding-left: 32px; }
+.overlay-nav a.current { color: var(--yellow); background: var(--ink); }
+.overlay-nav a.current .onum { opacity: 1; }
 .overlay-nav .onum { font-family: var(--font-mono); font-size: 14px; opacity: 0.6; }
+/* hide the persistent top-bar wordmark while the fullscreen nav covers it, so
+   the two text layers never visually collide */
+body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-events: none; }
 .overlay-foot {
   max-width: var(--container);
   margin: 32px auto 0;
@@ -194,9 +209,11 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
 }
 
 .sticker { position: absolute; pointer-events: none; user-select: none; }
+/* Positioned clear of the headline's text box (confirmed via measured box model),
+   clustered in the open area right of the chips / above the spin badge. */
 .sticker-star { top: 190px; right: 210px; font-size: 30px; color: var(--yellow-deep); animation: bob 5s ease-in-out infinite; }
-.sticker-bolt { top: 340px; left: 24px; font-size: 26px; animation: bob 4.5s ease-in-out infinite 0.6s; }
-.sticker-dot { top: 260px; left: 90px; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); animation: bob 3.6s ease-in-out infinite 0.3s; }
+.sticker-dot { top: 250px; right: 280px; width: 12px; height: 12px; border-radius: 50%; background: var(--ink); animation: bob 3.6s ease-in-out infinite 0.3s; }
+.sticker-bolt { top: 420px; right: 70px; font-size: 26px; animation: bob 4.5s ease-in-out infinite 0.6s; }
 @keyframes bob { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(8deg); } }
 
 .spin-badge {
@@ -363,6 +380,7 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
 .marquee-slow .marquee-track { animation-duration: 40s; color: var(--ink); }
 .marquee-slow .dot-sep { color: var(--ink); opacity: 0.5; }
 .dot-sep { color: var(--yellow); opacity: 0.6; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
 @keyframes scroll-left {
   from { transform: translateX(0); }
   to { transform: translateX(-50%); }
@@ -399,6 +417,7 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
 /* ===== Intro ===== */
 .intro-grid { display: grid; grid-template-columns: 0.8fr 1fr; gap: 80px; }
 .intro-left .h2-serif { margin-top: 12px; }
+.intro-right { margin-top: 52px; }
 .intro-right .lead { font-family: var(--font-serif); font-size: 22px; font-weight: 500; margin-bottom: 20px; }
 .intro-right p { color: var(--text-dim); font-size: 16px; line-height: 1.75; margin-bottom: 18px; }
 .stat-row { margin-top: 96px; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 2px solid var(--ink); }
@@ -507,8 +526,18 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
   object-fit: cover;
   mix-blend-mode: multiply;
 }
-.wp-info { position: relative; z-index: 1; max-width: 620px; }
-.work-panel.reverse .wp-info { margin-left: auto; margin-right: 0; text-align: right; }
+.wp-info {
+  position: relative;
+  z-index: 1;
+  max-width: 620px;
+  margin: 40px;
+  background: rgba(255,248,221,0.88);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  padding: 28px 32px;
+  border-radius: 16px;
+}
+.work-panel.reverse .wp-info { margin-left: auto; margin-right: 40px; text-align: right; }
 .wp-index {
   display: inline-block;
   font-family: var(--font-mono);
@@ -606,6 +635,10 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
 .statement-inner { position: relative; z-index: 1; }
 .statement-head { font-family: var(--font-serif); font-weight: 500; font-size: clamp(34px, 6.4vw, 76px); line-height: 1.12; letter-spacing: -0.01em; color: #fff; }
 .statement-inner p { margin: 32px auto 40px; color: rgba(255,255,255,0.6); max-width: 460px; font-size: 16px; }
+/* the default hard-shadow is ink-on-ink here (invisible against the black
+   section) — swap to a light shadow so the poster-button signature still reads */
+.statement .btn-line { box-shadow: 4px 4px 0 rgba(255,255,255,0.9); }
+.statement .btn-line:hover { box-shadow: 7px 7px 0 rgba(255,255,255,0.9); }
 
 /* ===== Clients ===== */
 .kicker-mono { font-family: var(--font-mono); font-size: 11px; font-weight: 700; letter-spacing: 0.14em; color: var(--ink); margin-bottom: 36px; }
@@ -670,6 +703,36 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
 .credits { margin-top: 64px; display: flex; justify-content: center; gap: 48px; flex-wrap: wrap; font-family: var(--font-mono); }
 .credits div { font-size: 13px; color: var(--text); }
 .credits span { display: block; color: var(--text-faint); font-size: 10px; letter-spacing: 0.1em; margin-bottom: 6px; text-transform: uppercase; }
+.copy-email {
+  font: inherit;
+  font-family: var(--font-mono);
+  color: var(--text);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  border-bottom: 1px dashed var(--border);
+  transition: color 0.2s, border-color 0.2s;
+}
+.copy-email:hover { color: var(--ink); border-color: var(--ink); }
+.copy-email.copied { color: var(--yellow-deep); border-color: var(--yellow-deep); }
+
+/* ===== Cursor-follow accent (hero only, fine-pointer devices) ===== */
+.cursor-dot {
+  position: absolute;
+  top: 0; left: 0;
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+  pointer-events: none;
+  z-index: 3;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.3s, width 0.2s, height 0.2s, background 0.2s;
+}
+.cursor-dot.active { opacity: 1; }
+.cursor-dot.on-target { background: var(--yellow); width: 34px; height: 34px; }
+@media (pointer: coarse) { .cursor-dot { display: none; } }
 
 /* ===== Footer ===== */
 .footer { background: var(--ink); border-top: 2px solid var(--ink); padding: 56px 0 0; color: #fff; }
@@ -695,10 +758,12 @@ body.nav-open .menu-icon i:last-child { transform: translateY(-2.75px) rotate(-4
 /* ===== Responsive ===== */
 @media (max-width: 980px) {
   .intro-grid { grid-template-columns: 1fr; gap: 40px; }
+  .intro-right { margin-top: 0; }
   .stat-row { grid-template-columns: 1fr 1fr; }
   .stat-item { border-right: none; border-bottom: 1px solid var(--border); padding-bottom: 20px; }
-  .rundown-row { grid-template-columns: 40px 1fr; }
-  .rundown-row p { grid-column: 2 / -1; margin-top: 6px; }
+  .rundown-row { grid-template-columns: 40px 1fr; row-gap: 6px; column-gap: 20px; align-items: start; }
+  .rn { margin-top: 3px; }
+  .rundown-row p { grid-column: 2 / -1; margin-top: 2px; }
   .timeline { grid-template-columns: 1fr 1fr; gap: 40px 24px; }
   .timeline::before { display: none; }
   .why-list { grid-template-columns: 1fr; }

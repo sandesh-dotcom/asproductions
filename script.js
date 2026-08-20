@@ -89,14 +89,18 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   counters.forEach((el) => countObserver.observe(el));
 
-  // "Now playing" readout — tracks which labeled section is in view
+  // "Now playing" readout — tracks which labeled section is in view, and
+  // mirrors the same section as the "current" link in the fullscreen nav
   const labeledSections = document.querySelectorAll("[data-label]");
+  const overlayLinks = overlayNav.querySelectorAll("a[href^='#']");
   if (labeledSections.length && nowPlayingText) {
     const nowPlayingObserver = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             nowPlayingText.textContent = entry.target.dataset.label.toUpperCase();
+            const id = "#" + entry.target.id;
+            overlayLinks.forEach((a) => a.classList.toggle("current", a.getAttribute("href") === id));
           }
         });
       },
@@ -104,6 +108,60 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     labeledSections.forEach((el) => nowPlayingObserver.observe(el));
   }
+
+  // Polaroid tilt-on-mousemove — layers a 3D tilt on top of each photo's
+  // resting rotation (read from data-rot) instead of fighting it
+  const polaroids = document.querySelectorAll(".polaroid[data-rot]");
+  if (window.matchMedia("(pointer: fine)").matches) {
+    polaroids.forEach((el) => {
+      const rest = parseFloat(el.dataset.rot) || 0;
+      el.addEventListener("mousemove", (e) => {
+        const rect = el.getBoundingClientRect();
+        const px = (e.clientX - rect.left) / rect.width - 0.5;
+        const py = (e.clientY - rect.top) / rect.height - 0.5;
+        el.style.transform = `rotate(${rest * 0.3}deg) perspective(600px) rotateX(${py * -12}deg) rotateY(${px * 12}deg) scale(1.04)`;
+      });
+      el.addEventListener("mouseleave", () => {
+        el.style.transform = "";
+      });
+    });
+  }
+
+  // Cursor-follow accent dot, hero only
+  const hero = document.querySelector(".hero");
+  const cursorDot = document.getElementById("cursorDot");
+  if (hero && cursorDot && window.matchMedia("(pointer: fine)").matches) {
+    hero.addEventListener("mouseenter", () => cursorDot.classList.add("active"));
+    hero.addEventListener("mouseleave", () => cursorDot.classList.remove("active"));
+    hero.addEventListener("mousemove", (e) => {
+      const rect = hero.getBoundingClientRect();
+      cursorDot.style.left = e.clientX - rect.left + "px";
+      cursorDot.style.top = e.clientY - rect.top + "px";
+    });
+    hero.querySelectorAll("a, button").forEach((el) => {
+      el.addEventListener("mouseenter", () => cursorDot.classList.add("on-target"));
+      el.addEventListener("mouseleave", () => cursorDot.classList.remove("on-target"));
+    });
+  }
+
+  // Click-to-copy email
+  document.querySelectorAll(".copy-email").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const email = btn.dataset.email;
+      const original = btn.textContent;
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch (err) {
+        /* clipboard API unavailable — still show feedback so the click doesn't feel dead */
+      }
+      btn.textContent = "Copied!";
+      btn.classList.add("copied");
+      setTimeout(() => {
+        btn.textContent = original;
+        btn.classList.remove("copied");
+      }, 1600);
+    });
+  });
 
   // Smooth anchor scroll offset for fixed bar
   document.querySelectorAll('a[href^="#"]').forEach((link) => {

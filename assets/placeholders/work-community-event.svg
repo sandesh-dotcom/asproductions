@@ -1,12 +1,12 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
   <defs>
-    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
-      <circle cx="2" cy="2" r="1.4" fill="#0a0a0a" opacity="0.12"/>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="2" fill="#0a0a0a" opacity="0.1"/>
     </pattern>
   </defs>
-  <rect width="400" height="300" fill="#fff8dd"/>
-  <rect width="400" height="300" fill="url(#dots)"/>
-  <rect x="10" y="10" width="380" height="280" fill="none" stroke="#0a0a0a" stroke-width="2" stroke-dasharray="8 6" rx="14"/>
-  <text x="200" y="144" font-family="monospace" font-size="15" font-weight="700" fill="#0a0a0a" text-anchor="middle">PHOTO PLACEHOLDER</text>
-  <text x="200" y="170" font-family="monospace" font-size="12" fill="#4a4a46" text-anchor="middle">COMMUNITY EVENT — CROWD</text>
+  <rect width="1200" height="630" fill="#fff8dd"/>
+  <rect width="1200" height="630" fill="url(#dots)"/>
+  <rect x="24" y="24" width="1152" height="582" fill="none" stroke="#0a0a0a" stroke-width="3" stroke-dasharray="14 10" rx="20"/>
+  <text x="600" y="298" font-family="monospace" font-size="34" font-weight="700" fill="#0a0a0a" text-anchor="middle">PHOTO PLACEHOLDER</text>
+  <text x="600" y="340" font-family="monospace" font-size="22" fill="#4a4a46" text-anchor="middle">COMMUNITY EVENT — CROWD</text>
 </svg>

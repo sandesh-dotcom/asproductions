@@ -56,6 +56,7 @@
 
 <!-- HERO -->
 <section class="hero" id="top" data-label="Home">
+  <span class="cursor-dot" id="cursorDot" aria-hidden="true"></span>
 
   <span class="sticker sticker-star" aria-hidden="true">✦</span>
   <span class="sticker sticker-bolt" aria-hidden="true">⚡</span>
@@ -86,7 +87,7 @@
     </div>
   </div>
 
-  <figure class="polaroid hero-polaroid reveal">
+  <figure class="polaroid hero-polaroid reveal" data-rot="4">
     <span class="tape" aria-hidden="true"></span>
     <img src="assets/placeholders/hero-team.svg" alt="AS Production crew on site — replace with a real production-day photo" loading="lazy" />
     <figcaption>ON SITE · 2026</figcaption>
@@ -282,12 +283,12 @@
     </div>
   </div>
   <div class="gallery-strip reveal">
-    <figure class="polaroid g-1"><img src="assets/placeholders/gallery-01.svg" alt="Stage setup — replace with a real on-site photo" loading="lazy" /><figcaption>STAGE SETUP</figcaption></figure>
-    <figure class="polaroid g-2"><img src="assets/placeholders/gallery-02.svg" alt="Crowd energy — replace with a real on-site photo" loading="lazy" /><figcaption>CROWD ENERGY</figcaption></figure>
-    <figure class="polaroid g-3"><img src="assets/placeholders/gallery-03.svg" alt="Backstage — replace with a real on-site photo" loading="lazy" /><figcaption>BACKSTAGE</figcaption></figure>
-    <figure class="polaroid g-4"><img src="assets/placeholders/gallery-04.svg" alt="Registration desk — replace with a real on-site photo" loading="lazy" /><figcaption>REGISTRATION DESK</figcaption></figure>
-    <figure class="polaroid g-5"><img src="assets/placeholders/gallery-05.svg" alt="LED wall build — replace with a real on-site photo" loading="lazy" /><figcaption>LED WALL BUILD</figcaption></figure>
-    <figure class="polaroid g-6"><img src="assets/placeholders/gallery-06.svg" alt="Crew at work — replace with a real on-site photo" loading="lazy" /><figcaption>CREW AT WORK</figcaption></figure>
+    <figure class="polaroid g-1" data-rot="-4"><img src="assets/placeholders/gallery-01.svg" alt="Stage setup — replace with a real on-site photo" loading="lazy" /><figcaption>STAGE SETUP</figcaption></figure>
+    <figure class="polaroid g-2" data-rot="3"><img src="assets/placeholders/gallery-02.svg" alt="Crowd energy — replace with a real on-site photo" loading="lazy" /><figcaption>CROWD ENERGY</figcaption></figure>
+    <figure class="polaroid g-3" data-rot="-2"><img src="assets/placeholders/gallery-03.svg" alt="Backstage — replace with a real on-site photo" loading="lazy" /><figcaption>BACKSTAGE</figcaption></figure>
+    <figure class="polaroid g-4" data-rot="4"><img src="assets/placeholders/gallery-04.svg" alt="Registration desk — replace with a real on-site photo" loading="lazy" /><figcaption>REGISTRATION DESK</figcaption></figure>
+    <figure class="polaroid g-5" data-rot="-3"><img src="assets/placeholders/gallery-05.svg" alt="LED wall build — replace with a real on-site photo" loading="lazy" /><figcaption>LED WALL BUILD</figcaption></figure>
+    <figure class="polaroid g-6" data-rot="2"><img src="assets/placeholders/gallery-06.svg" alt="Crew at work — replace with a real on-site photo" loading="lazy" /><figcaption>CREW AT WORK</figcaption></figure>
   </div>
 </section>
 
@@ -405,7 +406,7 @@
     <p class="cta-sub">Tell us what you're planning. We'll help you turn the idea into an experience.</p>
     <a href="mailto:hello@asproductions.in" class="btn-line magnetic">Start a Conversation <span class="arrow">→</span></a>
     <div class="credits">
-      <div><span>Email</span>hello@asproductions.in</div>
+      <div><span>Email</span><button type="button" class="copy-email" data-email="hello@asproductions.in">hello@asproductions.in</button></div>
       <div><span>Based in</span>India</div>
       <div><span>Serving</span>Pan India</div>
     </div>
