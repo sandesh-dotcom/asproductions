@@ -113,11 +113,16 @@ a { color: inherit; text-decoration: none; }
 }
 .bar-inner { display: flex; align-items: center; justify-content: space-between; }
 .wordmark {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-family: var(--font-mono);
   font-weight: 700;
   font-size: 13px;
   letter-spacing: 0.06em;
 }
+.wordmark-icon { height: 22px; width: auto; display: block; }
+.footer .wordmark-icon { height: 26px; }
 .menu-btn {
   display: flex;
   align-items: center;
