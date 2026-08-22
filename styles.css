@@ -423,7 +423,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
 @media (max-width: 640px) { .hero-video { padding: 32px 0; } }
 
 /* ===== Sections ===== */
-.section { padding: 140px 0; }
+.section { padding: 104px 0; }
 .section-alt { background: var(--bg-alt); }
 .cue {
   display: inline-flex;
@@ -531,7 +531,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
 .tl-item p { color: var(--text-dim); font-size: 14px; line-height: 1.6; }
 
 /* ===== Work stack ===== */
-.work-stack .section-head { padding-top: 140px; margin-bottom: 40px; }
+.work-stack .section-head { padding-top: 104px; margin-bottom: 40px; }
 .work-panel {
   display: flex;
   align-items: center;
@@ -742,7 +742,6 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
 
 /* ===== Responsive ===== */
 @media (max-width: 980px) {
-  .section { padding: 104px 0; }
   .intro-grid { grid-template-columns: 1fr; gap: 40px; }
   .intro-right { margin-top: 0; }
   .stat-row { grid-template-columns: 1fr 1fr; }
@@ -752,7 +751,6 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   .rundown-row p { grid-column: 2 / -1; margin-top: 2px; }
   .timeline { grid-template-columns: 1fr; gap: 32px; max-width: 480px; }
   .timeline::before { display: none; }
-  .work-stack .section-head { padding-top: 104px; }
   .work-panel, .work-panel.reverse { flex-direction: column; align-items: stretch; gap: 28px; padding: 40px 24px; }
   .wp-visual-box { flex: none; width: 100%; aspect-ratio: 16 / 11; }
   .work-panel.reverse .wp-index { transform: rotate(-3deg); }
