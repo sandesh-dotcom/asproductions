@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("nav-open", isOpen);
   });
   overlayNav.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlayNav.classList.contains("open")) {
+      closeNav();
+      menuBtn.focus();
+    }
+  });
 
   // Scroll reveal
   const revealEls = document.querySelectorAll(".reveal");
