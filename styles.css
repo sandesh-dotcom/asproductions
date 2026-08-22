@@ -366,7 +366,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   display: inline-flex;
   align-items: center;
   gap: 22px;
-  animation: scroll-left 28s linear infinite;
+  animation: scroll-left 84s linear infinite;
   font-family: var(--font-mono);
   font-size: 13px;
   font-weight: 700;
@@ -385,12 +385,16 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
 .hero-marquee { position: relative; z-index: 1; border-bottom: none; }
 
 /* ===== Showreel video ===== */
-.hero-video { background: var(--ink); }
+.hero-video { padding: 48px 0; }
 .hero-video-frame {
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
-  max-height: 86vh;
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--hard);
+  background: var(--ink);
 }
 .hero-video-frame iframe {
   position: absolute;
@@ -400,6 +404,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   border: 0;
   display: block;
 }
+@media (max-width: 640px) { .hero-video { padding: 32px 0; } }
 
 /* ===== Sections ===== */
 .section { padding: 140px 0; }
