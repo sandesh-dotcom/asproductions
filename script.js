@@ -137,7 +137,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const hero = document.querySelector(".hero");
   const cursorDot = document.getElementById("cursorDot");
   if (hero && cursorDot && window.matchMedia("(pointer: fine)").matches) {
-    hero.addEventListener("mouseenter", () => cursorDot.classList.add("active"));
+    hero.addEventListener("mouseenter", (e) => {
+      const rect = hero.getBoundingClientRect();
+      cursorDot.style.left = e.clientX - rect.left + "px";
+      cursorDot.style.top = e.clientY - rect.top + "px";
+      cursorDot.classList.add("active");
+    });
     hero.addEventListener("mouseleave", () => cursorDot.classList.remove("active"));
     hero.addEventListener("mousemove", (e) => {
       const rect = hero.getBoundingClientRect();
