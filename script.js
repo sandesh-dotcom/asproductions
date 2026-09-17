@@ -174,16 +174,30 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // "Start a Conversation" mailto CTA: also copy the email to the clipboard,
-  // since a mailto: link silently does nothing when no mail client is
-  // registered (common in Chrome on machines without Outlook/Mail set up)
+  // "Start a Conversation" mailto CTA
+  // Mobile OSes resolve mailto: to whichever mail app (Gmail, Mail, Outlook...)
+  // the user has set as default, which is the expected native behavior, so we
+  // leave it alone there. On desktop most people read mail in Gmail-in-browser
+  // rather than a configured native client, so mailto: often does nothing
+  // visible (Chrome with no registered handler). There we open Gmail's web
+  // compose view instead. Either way we also copy the email to the clipboard
+  // as a fallback, with a visible confirmation on the button.
+  const isMobileDevice = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
   document.querySelectorAll(".mailto-cta").forEach((link) => {
-    link.addEventListener("click", async () => {
+    link.addEventListener("click", async (e) => {
       const email = link.dataset.email;
+      const subject = link.dataset.subject || "";
+
+      if (!isMobileDevice) {
+        e.preventDefault();
+        const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(email)}&su=${encodeURIComponent(subject)}`;
+        window.open(gmailUrl, "_blank", "noopener");
+      }
+
       try {
         await navigator.clipboard.writeText(email);
       } catch (err) {
-        /* clipboard API unavailable: mailto: still fires as the primary action */
+        /* clipboard API unavailable: mailto:/Gmail tab still fires as the primary action */
       }
       link.classList.add("copied");
       setTimeout(() => link.classList.remove("copied"), 2400);
