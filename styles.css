@@ -535,7 +535,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
 .work-stack .section-head { padding-top: 0; margin-bottom: 64px; }
 .work-panel {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 64px;
   max-width: var(--container);
   margin: 0 auto;
@@ -590,8 +590,8 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   box-shadow: var(--hard-sm);
 }
 .work-panel.reverse .wp-index { transform: rotate(3deg); }
-.wp-info h3 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(26px, 3.2vw, 40px); margin: 16px 0 8px; }
-.wp-info h3 .wp-years { font-size: 0.55em; font-family: var(--font-mono); font-weight: 700; color: var(--text-dim); vertical-align: middle; margin-left: 2px; }
+.wp-info h3 { font-family: var(--font-serif); font-weight: 500; font-size: clamp(26px, 3.2vw, 40px); line-height: 1.15; margin: 16px 0 8px; }
+.wp-info h3 .wp-years { display: block; font-size: 0.4em; font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.04em; color: var(--text-dim); margin-top: 6px; }
 .wp-tag { display: block; font-family: var(--font-mono); font-size: 12px; color: var(--text-dim); margin-bottom: 14px; }
 .wp-info p { max-width: 420px; color: var(--text-dim); font-size: 15px; line-height: 1.6; }
 
