@@ -672,7 +672,8 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   color: var(--text);
   background: none;
   border: none;
-  padding: 0;
+  padding: 12px 0;
+  margin: -12px 0;
   cursor: pointer;
   border-bottom: 1px dashed var(--border);
   transition: color 0.2s, border-color 0.2s;
@@ -702,6 +703,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
 .footer .wordmark { color: var(--yellow); }
 .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 32px; flex-wrap: wrap; padding-bottom: 40px; }
 .footer-links { display: flex; gap: 28px; font-size: 14px; color: rgba(255,255,255,0.7); flex-wrap: wrap; }
+.footer-links a, .footer-social a { display: inline-block; padding: 12px 0; }
 .footer-links a:hover { color: var(--yellow); }
 .footer-social { display: flex; gap: 20px; font-size: 14px; color: rgba(255,255,255,0.7); }
 .footer-social a:hover { color: var(--yellow); }
@@ -739,7 +741,8 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   .hero-inner { padding-bottom: 32px; }
   .container { padding: 0 24px; }
   .stat-row { grid-template-columns: 1fr 1fr; }
-  .credits { gap: 28px; }
+  .credits { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; text-align: center; }
+  .credits div:first-child { grid-column: 1 / -1; }
   .footer-row, .footer-bottom { flex-direction: column; align-items: flex-start; }
   .sticker-star, .sticker-bolt, .sticker-dot { display: none; }
   .work-stack { padding-bottom: 0; }
