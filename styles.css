@@ -209,7 +209,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   padding-top: clamp(112px, 15vw, 156px);
   overflow: hidden;
 }
-.hero-inner {
+.hero-inner.container {
   position: relative;
   padding-bottom: 48px;
 }
@@ -729,8 +729,20 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
   .rundown-row { grid-template-columns: 40px 1fr; row-gap: 6px; column-gap: 20px; align-items: start; }
   .rn { margin-top: 3px; }
   .rundown-row p { grid-column: 2 / -1; margin-top: 2px; }
-  .timeline { grid-template-columns: 1fr; gap: 32px; max-width: 480px; }
+  .timeline { grid-template-columns: 1fr; gap: 0; max-width: 480px; }
   .timeline::before { display: none; }
+  .tl-item { display: flex; gap: 20px; padding-bottom: 32px; }
+  .tl-item::before {
+    content: "";
+    position: absolute;
+    top: 52px; bottom: -6px; left: 25px;
+    width: 0;
+    border-left: 2px dashed var(--border);
+  }
+  .tl-item:last-child::before { display: none; }
+  .tl-item:last-child { padding-bottom: 0; }
+  .tl-num { margin-bottom: 0; flex-shrink: 0; }
+  .tl-item-body { padding-top: 12px; }
   .work-panel, .work-panel.reverse { flex-direction: column; align-items: stretch; gap: 28px; padding: 40px 24px; }
   .wp-visual-box { flex: none; width: 100%; aspect-ratio: 16 / 11; }
   .work-panel.reverse .wp-index { transform: rotate(-3deg); }
@@ -738,7 +750,7 @@ body.nav-open .bar .wordmark { opacity: 0; transition: opacity 0.2s; pointer-eve
 @media (max-width: 640px) {
   .section { padding: 72px 0; }
   .hero { padding-top: 112px; }
-  .hero-inner { padding-bottom: 32px; }
+  .hero-inner.container { padding-bottom: 32px; }
   .container { padding: 0 24px; }
   .stat-row { grid-template-columns: 1fr 1fr; }
   .credits { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; text-align: center; }
