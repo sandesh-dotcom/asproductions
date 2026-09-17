@@ -174,6 +174,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // "Start a Conversation" mailto CTA: also copy the email to the clipboard,
+  // since a mailto: link silently does nothing when no mail client is
+  // registered (common in Chrome on machines without Outlook/Mail set up)
+  document.querySelectorAll(".mailto-cta").forEach((link) => {
+    link.addEventListener("click", async () => {
+      const email = link.dataset.email;
+      try {
+        await navigator.clipboard.writeText(email);
+      } catch (err) {
+        /* clipboard API unavailable: mailto: still fires as the primary action */
+      }
+      link.classList.add("copied");
+      setTimeout(() => link.classList.remove("copied"), 2400);
+    });
+  });
+
   // Smooth anchor scroll offset for fixed bar
   document.querySelectorAll('a[href^="#"]').forEach((link) => {
     link.addEventListener("click", (e) => {
