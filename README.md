@@ -65,4 +65,4 @@ Import the repo as a static site (no build command, publish directory = `/`), th
 - [ ] Swap dummy client logos in `#clients` for real partner logos once confirmed
 - [ ] Swap dummy Wikimedia Commons photos (`#work`, `#gallery`) for real event photography, and generic avatar icons for real client headshots
 - [ ] Add real social links in the footer (LinkedIn, Instagram, YouTube)
-- [ ] Confirm `hello@asproductions.in` is a live inbox
+- [ ] Confirm `business@asproductions.in` is a live inbox
