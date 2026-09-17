@@ -1,4 +1,4 @@
-// ===== AS Production — script.js =====
+// ===== AS Production: script.js =====
 
 document.addEventListener("DOMContentLoaded", () => {
   const bar = document.getElementById("bar");
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
   onScroll();
   window.addEventListener("scroll", onScroll, { passive: true });
 
-  // Magnetic buttons — pull slightly toward the cursor within their bounds
+  // Magnetic buttons: pull slightly toward the cursor within their bounds
   const magnets = document.querySelectorAll(".magnetic");
   if (window.matchMedia("(pointer: fine)").matches) {
     magnets.forEach((el) => {
@@ -47,6 +47,12 @@ document.addEventListener("DOMContentLoaded", () => {
     document.body.classList.toggle("nav-open", isOpen);
   });
   overlayNav.querySelectorAll("a").forEach((a) => a.addEventListener("click", closeNav));
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && overlayNav.classList.contains("open")) {
+      closeNav();
+      menuBtn.focus();
+    }
+  });
 
   // Scroll reveal
   const revealEls = document.querySelectorAll(".reveal");
@@ -89,7 +95,7 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   counters.forEach((el) => countObserver.observe(el));
 
-  // "Now playing" readout — tracks which labeled section is in view, and
+  // "Now playing" readout: tracks which labeled section is in view, and
   // mirrors the same section as the "current" link in the fullscreen nav
   const labeledSections = document.querySelectorAll("[data-label]");
   const overlayLinks = overlayNav.querySelectorAll("a[href^='#']");
@@ -109,7 +115,7 @@ document.addEventListener("DOMContentLoaded", () => {
     labeledSections.forEach((el) => nowPlayingObserver.observe(el));
   }
 
-  // Polaroid tilt-on-mousemove — layers a 3D tilt on top of each photo's
+  // Polaroid tilt-on-mousemove: layers a 3D tilt on top of each photo's
   // resting rotation (read from data-rot) instead of fighting it
   const polaroids = document.querySelectorAll(".polaroid[data-rot]");
   if (window.matchMedia("(pointer: fine)").matches) {
@@ -131,7 +137,12 @@ document.addEventListener("DOMContentLoaded", () => {
   const hero = document.querySelector(".hero");
   const cursorDot = document.getElementById("cursorDot");
   if (hero && cursorDot && window.matchMedia("(pointer: fine)").matches) {
-    hero.addEventListener("mouseenter", () => cursorDot.classList.add("active"));
+    hero.addEventListener("mouseenter", (e) => {
+      const rect = hero.getBoundingClientRect();
+      cursorDot.style.left = e.clientX - rect.left + "px";
+      cursorDot.style.top = e.clientY - rect.top + "px";
+      cursorDot.classList.add("active");
+    });
     hero.addEventListener("mouseleave", () => cursorDot.classList.remove("active"));
     hero.addEventListener("mousemove", (e) => {
       const rect = hero.getBoundingClientRect();
@@ -152,7 +163,7 @@ document.addEventListener("DOMContentLoaded", () => {
       try {
         await navigator.clipboard.writeText(email);
       } catch (err) {
-        /* clipboard API unavailable — still show feedback so the click doesn't feel dead */
+        /* clipboard API unavailable: still show feedback so the click doesn't feel dead */
       }
       btn.textContent = "Copied!";
       btn.classList.add("copied");
